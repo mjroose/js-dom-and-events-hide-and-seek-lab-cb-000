@@ -8,7 +8,15 @@ function nestedTarget() {
 
 function deepestChild() {
   const grandNode = document.querySelector('div#grand-node');
-  return grandNode;
+  return getChild(grandNode);
+}
+
+function getChild(node) {
+  if (node.hasChildNodes()) {
+    return getChild(node.firstChild());
+  } else {
+    return node;
+  }
 }
 
 function increaseRankBy(n) {
