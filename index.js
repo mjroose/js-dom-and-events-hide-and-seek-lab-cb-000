@@ -12,7 +12,7 @@ function deepestChild() {
 }
 
 function getChild(node) {
-  if (node.hasChildNodes()) {
+  if (node.firstElementChild !== null) {
     return getChild(node.firstElementChild);
   } else {
     return node;
